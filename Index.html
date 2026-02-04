@@ -84,7 +84,7 @@ nav a{
 }
 
 section{
-    padding:100px 40px;
+    scroll-margin-top:100px;40px;
     max-width:1100px;
     margin:auto;
 }
@@ -213,15 +213,18 @@ footer{
 <h2>Form Pemesanan</h2>
 <form onsubmit="sendWA(); return false;">
 <input id="nama" placeholder="Nama" required>
-<input id="menu" placeholder="Pesanan" required>
-<input id="jumlah" type="number" placeholder="Jumlah" required>
+<input id="pesanan" placeholder="Pesanan" required>
+<input id="jumlah" type="number" min="1" required>
 <textarea id="alamat" placeholder="Alamat / Catatan"></textarea>
 <button type="submit">Kirim Pesanan</button>
 </form>
 </section>
 
-<a class="whatsapp" href="https://wa.me/628xxxxxxxxxx" target="_blank">
-Chat WhatsApp
+    <label>Nama</label>
+<input id="nama" required>
+    
+<a class="whatsapp"> href="https://wa.me/628xxxxxxxxxx" target="_blank"
+Chat WhatsApp 
 </a>
 
 <footer>
@@ -231,7 +234,7 @@ Chat WhatsApp
 <script>
 function sendWA(){
     let nama = document.getElementById("nama").value;
-    let menu = document.getElementById("menu").value;
+    let menu = document.getElementById("pesanan").value;
     let jumlah = document.getElementById("jumlah").value;
     let alamat = document.getElementById("alamat").value;
 
@@ -241,7 +244,7 @@ Pesanan: ${menu}
 Jumlah: ${jumlah}
 Alamat/Catatan: ${alamat}`;
 
-    let url = "https://wa.me/628xxxxxxxxxx?text=" + encodeURIComponent(pesan);
+    let url = "https://wa.me/6285353420310?text=" + encodeURIComponent(pesan);
     window.open(url, "_blank");
 }
 </script>
